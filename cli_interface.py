@@ -26,7 +26,7 @@ def search(search_query):
     start = 0
     max_results = 5     # retreive the first 5 results
 
-    query = f'search_query={search_query}&start={start}&max_results={max_results}'
+    query = f'search_query=all:{search_query}&sortBy=relevance&start={start}&max_results={max_results}'
     url = base_url + query
 
     #Using proxy to avoid geo-restrictions

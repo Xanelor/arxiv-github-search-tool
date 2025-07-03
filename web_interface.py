@@ -125,7 +125,7 @@ def index():
     # Base api query url
     base_url = 'http://export.arxiv.org/api/query?'
 
-    api_query = f'search_query={query}&start={start}&max_results={max_results}'
+    api_query = f'search_query=all:{query}&sortBy=relevance&start={start}&max_results={max_results}'
     url = base_url + api_query
 
     #Using proxy to avoid geo-restrictions
