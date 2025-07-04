@@ -128,12 +128,9 @@ def index():
     api_query = f'search_query=all:{query}&sortBy=relevance&start={start}&max_results={max_results}'
     url = base_url + api_query
 
-    #Using proxy to avoid geo-restrictions
-    proxy = {"http": "http://205.198.65.77:80"}
-
     # perform a GET request using the base_url and query
     try:
-        response = requests.get(url, proxies=proxy, timeout=10)
+        response = requests.get(url, timeout=10)
         response.raise_for_status()    # Raise error on bad status codes
 
         # parse the response using feedparser
